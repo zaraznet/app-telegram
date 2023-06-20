@@ -1,13 +1,13 @@
 /node_modules
 
-#/build
+/build
 
-#/src
+/src
 
 /Bot
 
-#/public
+/public
 
-#package-lock.json
+package-lock.json
 
-#package.json
+package.json
