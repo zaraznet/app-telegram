@@ -1,63 +1,53 @@
-import { useState, useEffect } from "react";
-import "./App.css";
-import Card from "./Components/Card/Card";
-import Cart from "./Components/Cart/Cart";
-const { getData } = require("./db/db");
-const foods = getData();
-
-const tele = window.Telegram.WebApp;
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import HomePage from "./Components/Pages/HomePage";
+import Catalog2 from "./Components/Pages/Catalog2";
 
 function App() {
-  const [cartItems, setCartItems] = useState([]);
-
-  useEffect(() => {
-    tele.ready();
-  });
-
-  const onAdd = (food) => {
-    const exist = cartItems.find((x) => x.id === food.id);
-    if (exist) {
-      setCartItems(
-        cartItems.map((x) =>
-          x.id === food.id ? { ...exist, quantity: exist.quantity + 1 } : x
-        )
-      );
-    } else {
-      setCartItems([...cartItems, { ...food, quantity: 1 }]);
-    }
-  };
-
-  const onRemove = (food) => {
-    const exist = cartItems.find((x) => x.id === food.id);
-    if (exist.quantity === 1) {
-      setCartItems(cartItems.filter((x) => x.id !== food.id));
-    } else {
-      setCartItems(
-        cartItems.map((x) =>
-          x.id === food.id ? { ...exist, quantity: exist.quantity - 1 } : x
-        )
-      );
-    }
-  };
-
-  const onCheckout = () => {
-    tele.MainButton.text = "Pay :)";
-    tele.MainButton.show();
-  };
-
   return (
-    <>
-      <h1 className="heading">Order Food</h1>
-      <Cart cartItems={cartItems} onCheckout={onCheckout}/>
-      <div className="cards__container">
-        {foods.map((food) => {
-          return (
-            <Card food={food} key={food.id} onAdd={onAdd} onRemove={onRemove} />
-          );
-        })}
-      </div>
-    </>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/Catalog2" component={Catalog2} />
+      </Switch>
+    </Router>
   );
 }
 
 export default App;
+
+/*
+Данный код основывается на React-компоненте `App`, который отображает список продуктов на странице.
+  Для каждого продукта отображается компонент `Card`, который отображает изображение продукта, его заголовок и цену.
+  В случае добавления продукта в корзину - увеличивается его количество, а при удалении продукта из корзины - его
+  количество уменьшается. Компонент `Cart` отображает список добавленных продуктов в корзину и вызывает функцию при
+  проверке корзины (на странице появляется кнопка "Pay"). Компонент `tele` используется для связи 
+  Telegram-браузера и веб-приложения.
+
+1. import { useState, useEffect } from "react"; - импорт двух хуков useState и useEffect.
+2. import "./App.css"; - импорт стилевого файла App.css.
+3. import Card from "./Components/Card/Card"; - импорт компонента Card.
+4. import Cart from "./Components/Cart/Cart"; - импорт компонента Cart.
+5. const { getData } = require("./db/db"); - импорт функции getData() из локальной базы данных.
+6. const foods = getData(); - вызов функции getData(), сохранение результата в массив foods.
+ foods содержит список продуктов, которые могут быть выбраны пользователем.
+7. const tele = window.Telegram.WebApp; - сохранение объекта Telegram.WebApp из глобальной области видимости браузера.
+8. function App() { ... } - определение компонента App.
+9. const [cartItems, setCartItems] = useState([]); - создание состояния cartItems, которое содержит список
+ добавленных продуктов и функцию их обновления setCartItems. Начальное значение состояния пустой массив [].
+10. useEffect(() => { ... }); - хук useEffect, который используется для настройки приложения. 
+В данном случае он вызывает метод tele.ready(), который инициализирует подключение Telegram-браузера к телеграмм
+ серверам.
+11. const onAdd = (food) => { ... }; - функция, которая вызывается при добавлении продукта в корзину.
+ Если продукт уже находится в корзине, количество этого продукта увеличивается на 1, иначе продукт добавляется в корзину с количеством 1.
+12. const onRemove = (food) => { ... }; - функция, которая вызывается при удалении продукта из корзины. 
+Если количество продукта больше 1, количество продукта уменьшается на 1, иначе продукт удаляется из корзины.
+13. const onCheckout = () => { ... }; - функция, которая вызывается при проверке корзины. 
+Она устанавливает цену и отображает кнопку Pay в Telegram-браузере для оплаты товаров и услуг.
+14. <h1 className="heading">Order Food</h1> - заголовок страницы.
+15. <Cart cartItems={cartItems} onCheckout={onCheckout}/> - JSX-элемент, который отображает состояние корзины
+ и обрабатывает событие при нажатии на кнопку Checkout.
+16. {foods.map((food) => { ... })} - отображает продукты на странице, перебирая массив foods, и вызывает
+ компонент <Card> для каждого продукта. Ему передаются свойства объекта food, в том числе заголовок,
+  изображение, цена и идентификатор продукта.
+17. export default App; - экспорт компонента App.
+*/
