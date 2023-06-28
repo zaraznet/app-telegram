@@ -4,15 +4,17 @@
   "private": true,
   "homepage": "https://zaraznet.github.io/app-telegram/",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "node-telegram-bot-api": "^0.61.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.13.0",
     "react-router-dom": "^6.13.0",
-    "react-scripts": "5.0.1",
-    "telegraf": "^4.8.1",
-    "web-vitals": "^2.1.4"
+    "react-scripts": "^5.0.1",
+    "telegraf": "^4.12.2",
+    "telegram": "^2.17.10",
+    "telegram-bot-api": "^2.0.1",
+    "web-vitals": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",

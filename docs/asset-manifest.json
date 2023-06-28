@@ -1,20 +1,25 @@
 {
   "files": {
-    "main.css": "/app-telegram/static/css/main.9b946cd2.css",
-    "main.js": "/app-telegram/static/js/main.0fd68d2d.js",
-    "static/media/pizza.png": "/app-telegram/static/media/pizza.c644001e8aa3f3446e15.png",
-    "static/media/kebab.png": "/app-telegram/static/media/kebab.3c4858e89de56131e20d.png",
-    "static/media/burger.png": "/app-telegram/static/media/burger.cb91a41266710be009e6.png",
-    "static/media/salad.png": "/app-telegram/static/media/salad.c5129a877d11ec8a4de5.png",
-    "static/media/coca.png": "/app-telegram/static/media/coca.57521b94cac077d9dde9.png",
-    "static/media/icecream.png": "/app-telegram/static/media/icecream.596499d573e6d7c47d6a.png",
-    "static/media/water.png": "/app-telegram/static/media/water.52ba975d6e1bc5be32d3.png",
+    "main.css": "/app-telegram/static/css/main.7cf513a1.css",
+    "main.js": "/app-telegram/static/js/main.5388bfa6.js",
+    "static/media/chewinggums.png": "/app-telegram/static/media/chewinggums.3871655347a7ba91268d.png",
+    "static/media/Dandy.png": "/app-telegram/static/media/Dandy.56556bb31a01c34625d5.png",
+    "static/media/DonaldDuck.png": "/app-telegram/static/media/DonaldDuck.958e03be5baf2c9d9ba6.png",
+    "static/media/Baseball.png": "/app-telegram/static/media/Baseball.0576a101a0b6f2786c88.png",
+    "static/media/clothes90s.png": "/app-telegram/static/media/clothes90s.dd8d477952305ee5f043.png",
+    "static/media/TipiTip.png": "/app-telegram/static/media/TipiTip.18212511eca262940f67.png",
+    "static/media/Boomer.png": "/app-telegram/static/media/Boomer.c99aa4a151f7c4da9be3.png",
+    "static/media/Tamagotchi.png": "/app-telegram/static/media/Tamagotchi.dbe9f987245a3ea0362c.png",
+    "static/media/jacket.png": "/app-telegram/static/media/jacket.2ff4ab68018cb00cd6a0.png",
+    "static/media/Tetris.png": "/app-telegram/static/media/Tetris.cbd508141e3d2793aa39.png",
+    "static/media/games.png": "/app-telegram/static/media/games.1716af5b090ff96970dc.png",
+    "static/media/Tracksuit.png": "/app-telegram/static/media/Tracksuit.e6501e4f6688aab82031.png",
     "index.html": "/app-telegram/index.html",
-    "main.9b946cd2.css.map": "/app-telegram/static/css/main.9b946cd2.css.map",
-    "main.0fd68d2d.js.map": "/app-telegram/static/js/main.0fd68d2d.js.map"
+    "main.7cf513a1.css.map": "/app-telegram/static/css/main.7cf513a1.css.map",
+    "main.5388bfa6.js.map": "/app-telegram/static/js/main.5388bfa6.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b946cd2.css",
-    "static/js/main.0fd68d2d.js"
+    "static/css/main.7cf513a1.css",
+    "static/js/main.5388bfa6.js"
   ]
 }
